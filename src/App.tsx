@@ -14,16 +14,13 @@ function App() {
     >
       <GridItem area={"nav"}>
         <NavBar />
-        <Button variant="outline" onClick={toggleColorMode} mt={4} colorScheme="teal" size="sm">
-          toggleColorMode
-        </Button>
       </GridItem>
       {showAside && (
-        <GridItem area={"aside"} bg="lightgray">
+        <GridItem area={"aside"}>
           aside
         </GridItem>
       )}
-      <GridItem area={"main"} bg="yellow">
+      <GridItem area={"main"}>
         main
       </GridItem>
     </Grid>
