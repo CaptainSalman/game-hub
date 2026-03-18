@@ -1,13 +1,27 @@
-import { Button, HStack } from "@chakra-ui/react"
+import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 
 function App() {
-
+  const showAside = useBreakpointValue({ base: false, lg: true });
   return (
-    <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-    </HStack>
-  )
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area={"nav"} bg="coral">
+        nav
+      </GridItem>
+      {showAside && (
+        <GridItem area={"aside"} bg="lightgray">
+          aside
+        </GridItem>
+      )}
+      <GridItem area={"main"} bg="yellow">
+        main
+      </GridItem>
+    </Grid>
+  );
 }
 
-export default App
+export default App;
