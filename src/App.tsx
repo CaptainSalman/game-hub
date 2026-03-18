@@ -1,6 +1,7 @@
 import { Button, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import NavBar from "./components/Navbar";
 import { useColorMode } from "./components/ui/color-mode";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   const showAside = useBreakpointValue({ base: false, lg: true });
@@ -21,7 +22,7 @@ function App() {
         </GridItem>
       )}
       <GridItem area={"main"}>
-        main
+        <GameGrid />
       </GridItem>
     </Grid>
   );
