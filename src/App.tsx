@@ -3,9 +3,12 @@ import NavBar from "./components/Navbar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useState } from "react";
+import type { Genre } from "./hooks/useGenre";
 
 function App() {
   const showAside = useBreakpointValue({ base: false, lg: true });
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const {toggleColorMode} = useColorMode();
   return (
     <Grid
@@ -23,11 +26,11 @@ function App() {
       </GridItem>
       {showAside && (
         <GridItem area={"aside"}>
-          <GenreList />
+          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
       )}
       <GridItem area={"main"}>
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
   );
