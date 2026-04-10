@@ -19,7 +19,7 @@ const ColorModeSwitch = () => {
         </Switch.Control>
         <Switch.Label />
       </Switch.Root>
-      <Text>{colorMode}</Text>
+      <Text whiteSpace={"nowrap"}>{colorMode} Mode</Text>
     </HStack>
   );
 };
