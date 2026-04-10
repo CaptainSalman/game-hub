@@ -13,7 +13,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: props) => {
   if (error) return null;
   return (
     <Menu.Root>
-      <Menu.Trigger>
+      <Menu.Trigger asChild>
         <Button variant="outline" size="sm">
           {selectedPlatform?.name || "Platform"}
           <BsChevronDown />

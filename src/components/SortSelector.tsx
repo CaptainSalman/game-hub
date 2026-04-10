@@ -20,7 +20,7 @@ const SortSelector = ({ onSelectSortOrder, selectedSortOrder }: props) => {
   )?.label;
   return (
     <Menu.Root>
-      <Menu.Trigger>
+      <Menu.Trigger asChild>
         <Button variant="outline" size="sm">
           Order by: {currentSortOrder || "Relevance"}
           <BsChevronDown />
