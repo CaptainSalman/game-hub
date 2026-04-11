@@ -26,9 +26,10 @@ const useGames = (gameQuery: GameQuery) => {
         genres: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
+        search: gameQuery.search,
       },
     },
-    [gameQuery.genre, gameQuery.platform, gameQuery.sortOrder],
+    [gameQuery.genre, gameQuery.platform, gameQuery.sortOrder, gameQuery.search],
   );
   return useGames;
 };
