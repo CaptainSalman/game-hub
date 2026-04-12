@@ -1,13 +1,11 @@
 import {
   Box,
-  Button,
   Grid,
   GridItem,
   HStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import NavBar from "./components/Navbar";
-import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
@@ -28,7 +26,6 @@ function App() {
   const showAside = useBreakpointValue({ base: false, lg: true });
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
-  const { toggleColorMode } = useColorMode();
   return (
     <Grid
       templateAreas={{
